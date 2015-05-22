@@ -32,7 +32,8 @@ Zepto(function($){
 				
 		trigger: $('#file'),
 		container: $('#container'),
-		width: 320,
+		//width: $(window).get(0).innerWidth,
+		width:320,
 		height: 280,
 		stageX:  $('#container')[0].offsetLeft,
 		iconScale: {

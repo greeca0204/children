@@ -1,3 +1,4 @@
+<META charset="utf-8">
 <?php
 	session_start();
 	include("lib/conn.php");
@@ -13,7 +14,6 @@
 	$fileName = time();
 	$url = "upload/".$fileName.".jpg";
 	$success = file_put_contents($url, $tmp);
-	
 	/*写入数据库*/
 	if($success){
 		$sql="insert into a_motherday(openid,nickname,img) values('$openId','$nickname','$url')";

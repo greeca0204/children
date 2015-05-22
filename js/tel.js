@@ -1,3 +1,12 @@
+
+function clearTel(){
+	var tel = document.getElementById("tel").value;	
+	if(tel=="请输入手机号码"){
+		document.getElementById("tel").value = "";
+		document.getElementById("tel").focus();
+		document.getElementById("tel").select();
+	}
+}
 //电话号码认证
 function validate()
 {
@@ -8,14 +17,23 @@ function validate()
 				
 	if(tel==""){
 		alert("请输入电话号码！");
+		document.getElementById("tel").value="";
+		document.getElementById("tel").focus();
+		document.getElementById("tel").select();
 		return false;
 	}
 	else if (!re.test(tel)){
 		alert("请输入正确的电话号码！");
+		document.getElementById("tel").value="";
+		document.getElementById("tel").focus();
+		document.getElementById("tel").select();
 		return false;
 	}
 	else if(tel.length!=11){
 		alert('请输入正确的电话号码！');
+		document.getElementById("tel").value="";
+		document.getElementById("tel").focus();
+		document.getElementById("tel").select();
 		return false;
 	}
 	else{
@@ -28,10 +46,16 @@ function validate()
 			||tel_head=='130'||tel_head=='131'||tel_head=='132'||tel_head=='145'||tel_head=='155'||tel_head=='156'
 			||tel_head=='185'||tel_head=='186'){
 			alert('暂不支持移动和联通手机用户！');
+			document.getElementById("tel").value="";
+			document.getElementById("tel").focus();
+			document.getElementById("tel").select();
 			return false;
 		}		
 		else{
 			alert('此手机号非法！');
+			document.getElementById("tel").value="";
+			document.getElementById("tel").focus();
+			document.getElementById("tel").select();
 			return false;
 		}
 	}

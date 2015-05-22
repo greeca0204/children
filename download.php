@@ -14,16 +14,7 @@
 		<META name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<META name="apple-mobile-web-app-capable" content="yes">
 		<META name="apple-mobile-web-app-status-bar-style" content="black">
-
-		<!-- 浏览器缓存，仅用于测试，发布版本需要删掉 -->
-		<!--
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
-		-->
-		<!-- 浏览器缓存，仅用于测试，发布版本需要删掉 -->
-
-		<TITLE><?php echo $gsitetitle;?></TITLE>
+	    <title><?php echo $gsitetitle;?></title>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
 		<link rel="stylesheet" type="text/css" href="css/download.css" />
 		<SCRIPT>document.documentElement.style.height = window.innerHeight + 'px';</SCRIPT>
@@ -41,10 +32,10 @@
 			});
 			
 			var wxDefaultData = {
-				"title":"<?php echo $gstwc_title_proPic;?>",
-				"desc" : "<?php echo $gstwc_desc_proPic;?>",
-				"link":"<?php echo $gstwc_link_proPic;?>",
-				"imgUrl":"<?php echo $gstwc_imgUrl_proPic;?>",
+				"title":"<?php echo $gstwc_title;?>",
+				"desc" : "<?php echo $gstwc_desc;?>",
+				"link":"<?php echo $gstwc_link;?>",
+				"imgUrl":"<?php echo $gstwc_imgUrl;?>",
 				"fail": function (res) {alert(JSON.stringify(res));location.reload();}
 			}
 			
@@ -85,24 +76,33 @@
 		</script>
 		<!-- 分享代码开始，由于涉及到PHP调用，不能拆开js-->
 	</HEAD>
-	<BODY>
+	<BODY bgcolor="#fff8b0">
+		<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;">
+			<img src="images/share1.jpg">
+		</div>
+		
 		<div class="warp">
-			<div style=" padding-top:200px; text-align:center;">
-
-				<p style="margin-bottom:10px;"><a href="http://nb.189.cn/portal/info/getLastClient.do?appId=flow&clientType=1&version=v1.1&ly=189-web"><img src="images/btn_08.jpg" width="184" height="55" /></a></p>
+			<div style="position:absolute;top:40px; left:0px; width:100%; text-align:center;">
+				<p style="font-size:18px; font-family:微软雅黑; font-weight:bold; color:#f00;">亲，恭喜您获取得10M电信流量</p>
+			</div>
+			<div style="position:absolute;bottom:50px; left:0px; width:100%; text-align:center;">
+				<div style="width:100%; text-align:center; margin-bottom:5px;">
+					<img src="images/success_01.jpg" width="320" />
+				</div>
+				<p style="margin-bottom:10px;"><a href="http://nb.189.cn/portal/info/getLastClient.do?appId=flow&clientType=1&version=v1.1&ly=189-web"><img src="images/btn_08.jpg" width="208" height="44" /></a></p>
 				<?php
 					$userAgent = $_SERVER['HTTP_USER_AGENT'];
 					if(strpos($userAgent,"iPhone") || strpos($userAgent,"iPad") || strpos($userAgent,"iPod")){
 				?>
-						<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzEzNjMxNg==&mid=214301154&idx=2&sn=0a1e150a1f94f39a0da01de9fd941374#rd"><img src="images/btn_07.jpg" width="184" height="55" /></a></p>
+						<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzEzNjMxNg==&mid=214301154&idx=2&sn=0a1e150a1f94f39a0da01de9fd941374#rd"><img src="images/btn_07.jpg" width="208" height="44" /></a></p>
 				<?php	
 					}else if(strpos($userAgent,"Android")){
 				?>
-						<p><a href="weixin://profile/llb21cn"><img src="images/btn_07.jpg" width="184" height="55" /></a></p>
+						<p><a href="weixin://profile/llb21cn"><img src="images/btn_07.jpg" width="208" height="44" /></a></p>
 				<?php					    
 					}
 				?>
-				<p><a href="#">查看流量兑换详情</a></p>
+				<p style="margin-top:30px;"><a href="#" onclick="document.getElementById('mcover').style.display='block';">查看流量兑换详情</a></p>
 			</div>
 		</div>
 	</BODY>

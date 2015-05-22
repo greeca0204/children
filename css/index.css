@@ -1,0 +1,124 @@
+::-moz-selection {
+    text-shadow: none;
+}
+::selection {
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+audio, canvas, img, video {
+    vertical-align: middle;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+body{
+    background:#f6f5b2;
+}
+.container {
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 640px;
+    position: relative;
+    margin: 0 auto;
+}
+#fp-nav span, .fp-slidesNav span {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+/*
+    上滑提示
+*/
+@-webkit-keyframes start {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*section，每个页面的样式设定*/
+.section, .slide {
+    position: relative;
+    background-color:#f6f5b2;
+}
+.fp-controlArrow{
+    display: none;
+}
+
+#section1 {
+    background:url(../images/img1.jpg) no-repeat;
+    background-size:100% auto;
+    background-color:#f6f5b2;
+}
+#section2 {
+    background:url(../images/img2.jpg) no-repeat;
+    background-size:100% auto;
+    background-color:#f6f5b2;
+}
+#section3 {
+    background:url(../images/img3.jpg) no-repeat;
+    background-size:100% auto;
+    background-color:#f6f5b2;
+}
+#section4 {
+    background:url(../images/img4.jpg) no-repeat;
+    background-size:100% auto;
+    background-color:#f6f5b2;
+}
+#section5 {
+    background:url(../images/img5.jpg) no-repeat;
+    background-size:100% auto;
+    background-color:#f6f5b2;
+}
+#section6 {
+    background:url(../images/img6.jpg) no-repeat;
+    background-size:100% auto;
+    background-color:#f6f5b2;
+}
+
+#section1 .word,#section2 .word,#section3 .word,#section4 .word,#section5 .word,#section6 .word{ position:absolute; bottom:50px; width:100%; text-align:center;}
+#section6 .btn2{ position:absolute; bottom:50px; width:100%; text-align:center;}
+#section6 .btn1{ position:absolute; bottom:120px; width:100%; text-align:center;}
+
+/*弹出层*/		
+#mcover {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.7);display: none;z-index: 20000;}
+#mcover img {position: fixed;right: 0px;top: 0px;width: 100%; z-index: 999;}
+
+/*按钮和内容*/
+.firstpage_btn{position: absolute; left:0px; bottom: 100px; width:100%; text-align:center;}
+.firstpage_content{position:absolute; left:0px; bottom:10px; width:100%; text-align:center;}
+.hdgz{position:absolute; top:0px; right:5px;}
+.hdgz a{ text-decoration:none;  color:#e85207; font-weight: bold;}

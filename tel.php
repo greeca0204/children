@@ -14,19 +14,13 @@
 		<META name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<META name="apple-mobile-web-app-capable" content="yes">
 		<META name="apple-mobile-web-app-status-bar-style" content="black">
-
-		<!-- 浏览器缓存，仅用于测试，发布版本需要删掉 -->
-		<!--
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
-		-->
-		<!-- 浏览器缓存，仅用于测试，发布版本需要删掉 -->
-
-		<TITLE><?php echo $gsitetitle;?></TITLE>
+	    <title><?php echo $gsitetitle;?></title>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<!--电话-->
 		<link rel="stylesheet" type="text/css" href="css/tel.css"/>		
 		<SCRIPT src="js/tel.js"></SCRIPT>
+		<!--电话-->
 		<SCRIPT>document.documentElement.style.height = window.innerHeight + 'px';</SCRIPT>
 		
 		<!-- 分享代码开始，由于涉及到PHP调用，不能拆开js-->
@@ -85,20 +79,45 @@
 			});
 		</script>
 		<!-- 分享代码开始，由于涉及到PHP调用，不能拆开js-->
+		<script type="text/javascript">
+			$(function(){	
+				//数字+字母验证
+				$("#code").click(function(){
+					$(this).attr("src",'lib/create_code.php?' + Math.random());
+				});
+			});
+		</script>
 	</HEAD>
-	<BODY>
+	<BODY bgcolor="#fff8b0">
 		<!--分享div -->
-		<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: block;">
-     		<img src="images/share.jpg">
-		</div>
+			<?php 
+				if(@$_SESSION['sharestatus']==0){
+			?>
+					<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: block;">
+						<img src="images/share.jpg">
+					</div>
+			<?php
+					$_SESSION['sharestatus'] = 1;
+				}
+				else{
+			?>
+					<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;">
+						<img src="images/share.jpg">
+					</div>
+			<?php
+				}
+			?>
 		<!--分享div -->
 		
 		<div class="warp">
-			<div style=" padding-top:220px; text-align:center;">
+			<div style="position:absolute;top:40px; left:0px; width:100%; text-align:center;">
+				<p style="font-size:18px; font-family:微软雅黑; font-weight:bold; color:#f00;">领取10M电信流量</p>
+			</div>
+			<div style="  position:absolute; width:100%; top:245px;  left:0px; text-align:center;">
 				<form action="updateTel.php" method="post" onsubmit="return validate();">
 					<div style="text-align:center;"><img src="images/tel_02.jpg" width="210px" height="auto" /></div>
 					<p style=" padding-top:5px; height:46px; background:url(images/kuang.jpg) no-repeat center 0px; -webkit-background-size: 223px 46px;background-size: 223px 46px;">
-						<input id="tel" name="tel" type="text" value="请输入手机号码" style="width:210px; height:35px; border:0px; background-color: transparent; " />
+						<input id="tel" name="tel" type="text" value="请输入手机号码" style="width:210px; height:35px; border:0px; background-color: transparent; " onfocus="clearTel();" />
 					</p>
 					<div style="width:210px; margin:0px auto; text-align:left;"><img src="images/tel_03.jpg" width="70px" height="auto" /></div>
 					<div style=" padding:5px 0px 5px 0px; height:32px;width:210px; margin:0px auto;">
@@ -106,7 +125,7 @@
 							<input type="text" name="code" style="width:90px; height:32px; border:0px; background-color: transparent; " />
 						</div>
 						<div style=" width:100px; float:left;">
-							<img id="code" src="lib/create_code.php" style="cursor: pointer; vertical-align:middle;" />
+							<img id="code" src="lib/create_code.php" title="看不清，换一个" style="cursor: pointer; vertical-align:middle;" />
 						</div>
 						<div class="cl"></div>
 					</div>

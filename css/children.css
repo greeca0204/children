@@ -1,0 +1,62 @@
+/* global */
+html,body,ul,h1,h2,h3,p,input,img,figure{margin: 0;padding: 0;}
+ul,ol{list-style: none;}
+html, body{width: 100%;height: 100%;overflow: hidden;-webkit-user-select: none;}
+body{/*background:-webkit-linear-gradient(#c5d9f6,#fff 50%);background:linear-gradient(#c5d9f6,#fff 50%);*/background:#f6f5b2;font:12px/21px \5FAE\8F6F\96C5\9ED1;color: #fff;}
+a, img{outline: 0 none;}
+
+.pages{width: 200%;height: 100%;overflow: hidden;zoom:1;}
+.pages .page{float: left;width:50%;height: 100%; text-align:center;}
+
+/*上传页*/
+.firstpage_content{position:absolute; left:0px; bottom:10px; width:100%; text-align:center;}
+.pages .p1{height: 300%;}
+.pages .p1 .sub-page{width: 100%;height: 33.34%;-webkit-box-sizing: border-box;/*padding-top: 50px;*/}
+.p1{position: relative;}
+.p1 .content{height: 100%;}
+.p1 .sp3{position: relative;background: url(../images/img5.jpg) no-repeat center 0px;-webkit-background-size: 100% auto;background-size:100% auto;}
+.p1 .sp3 .upgrate_btn{position: relative; width: 251px; margin: 0px auto;  }
+.p1 .sp3 .upgrate_btn .real-btn {position: absolute; top: 308px; left: 0px; width: 251px;height: 42px;opacity: 0;}
+.p1 .sp3 .upgrate_btn .btn-take-photo{position: absolute;top: 308px; left: 0px; background: url(../images/btn_06.jpg) no-repeat; width: 251px; height:42px; -webkit-background-size: 251px 42px;background-size: 251px 42px; pointer-events:none; border:0px;}
+.p1 .sp3 .pos1{position: absolute;left: 50%;top: 146px;margin-left: -133px;font-size: 12px;color: #000;}
+.p1 .sp3 .pos1 .em{color: #2aa700}
+.p1 .sp3 .arrow{position: absolute;bottom: 20px;left: 50%;margin-left: -15px;}
+
+@media screen and (orientation:landscape) {
+    .p1 .sp3{background-position: center -10px;}
+    .p1 .sp3 .pos1{top: 86px;}
+    .p1 .sp3 .btn-take-photo{top: 308px;}
+    .p1 .sp3 .real-btn{top: 308px;}
+}
+
+/*拍照页*/
+.p2{background-color: #fff;}
+.p2 .content{position: relative;width: 100%;overflow: hidden;}
+
+.p2 .editor{position: relative;width: 320px;height: 280px; margin:0px auto; overflow: hidden;}
+.p2 .editor .role{position: absolute;left: 50px;top: 20px;display: none;z-index: 2;}
+.p2 .editor .icon-scale{display: none;}
+.p2 .editor .snapshot{position: absolute;left: 10px;top: 10px;z-index: 1;}
+.p2 .editor .img-wrap.enanled{outline: 2px solid #fff;}
+.p2 .editor .img-wrap.enanled .icon-scale{display: block;position: absolute;right: -13px;top: -13px;width: 30px;height: 30px;-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.3);box-shadow:1px 1px 4px rgba(0,0,0,0.3);border-radius: 15px; background-color: #e3e3e3;}
+.p2 .editor .img-wrap{transform-origin:right top;-webkit-transform-origin:right top;}
+
+.p2 .tools{overflow: hidden; height: 90px;width: 100%; margin: 0px auto;}
+.p2 .tools .list-role{width: 100%;}
+.p2 .hint{display: none;position: absolute;left: 0;top: 0;z-index: 2;width: 100%;height: 100%;background-color: rgba(0,0,0,0.8);color: #fff;text-align: center;line-height: 50px;}
+.list-role li{float: left;width: 25%; height:82px; color: #000;text-align: center;line-height: 24px;}
+.list-role .thumbli{width: 60px;height: 80px; margin: 0px auto; background:#fff; border:1px solid #000; overflow: hidden;}
+.list-role .thumbli .thumb{width: 50px;height: 50px;margin:4px auto; overflow: hidden;}
+.list-role .thumbli .thumb img{width: 50px; height: 50px;}
+.list-role .current{position: relative;}
+.list-role .current::after{content: ' ';position: absolute;left: 20px;top: 40px;width: 25px;height: 25px;background: url(../images/icon.png) no-repeat -100px -150px;-webkit-background-size: 250px 250px;background-size: 250px 250px;}
+
+.p2 nav{ width: 100%;height: 27px;color: #666;font-size: 14px;}
+.p2 nav ul{display:-webkit-box;display: box;}
+.p2 nav .icon-left, .p2 nav .icon-right{margin: 0 5px;}
+.p2 nav h2{color: #2aa700;font-size: 14px;}
+.p2 nav li{-webkit-box-flex:1;box-flex:1;line-height: 27px;}
+
+@-webkit-keyframes move-down {
+	50% { -webkit-transform: translate(0, 10px)}
+}

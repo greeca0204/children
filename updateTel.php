@@ -18,7 +18,7 @@
 	$version = 'v1.5'; //版本号
 	
 	/*检测验证码*/
-	if($_POST['code'] != $code){
+	if(strtolower($_POST['code']) != strtolower($code)){
 		echo "<script>alert('验证码错误！');location.href='tel.php';</script>";
 	}	
 	

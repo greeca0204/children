@@ -18,5 +18,5 @@
 		pages[i].style.height = window.innerHeight * 3 + 'px';
 	}
 	var p2Content = document.querySelector('.p2 .content');
-	p2Content.style.height = window.innerHeight - 51 + 'px';
+	//p2Content.style.height = window.innerHeight - 51 + 'px';
 })();
