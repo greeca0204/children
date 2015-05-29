@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	$_SESSION['openId'] = @$_GET['openId'];
-	$_SESSION['nickname'] = @$GET['nickname'];
+	$_SESSION['nickname'] = @$_GET['nickname'];
 	$_SESSION['sharestatus'] = 0;
 	include("lib/globalPram.php");//系统全局参数
 	include("lib/share.php");//分享接口实现
@@ -94,22 +94,31 @@
 	<body>
 	    <div class="container">
 	        <div id="fullpage">
-	            <div class="section" id="section1"></div>
-	            <div class="section" id="section2"></div>
-	            <div class="section" id="section3"></div>
-	            <div class="section" id="section4"></div>
+	            <div class="section" id="section1">
+	            	<div class="word"><img src="images/index/img1_1.jpg" width="100%" /></div>
+					<div style="position:absolute;left:0px; bottom:10px; width:100%; text-align:center;-webkit-animation: start 1.5s infinite ease-in-out;"><img src="images/index/web-swipe-tip.png" /></div>
+	            </div>
+	            <div class="section" id="section2">
+	            	<div class="word"><img src="images/index/img2_1.jpg" width="100%" /></div>
+					<div style="position:absolute;left:0px; bottom:10px; width:100%; text-align:center;-webkit-animation: start 1.5s infinite ease-in-out;"><img src="images/index/web-swipe-tip.png" /></div>
+	            </div>
+	            <div class="section" id="section3">
+	            	<div class="word"><img src="images/index/img3_1.jpg" width="100%" /></div>
+					<div style="position:absolute;left:0px; bottom:10px; width:100%; text-align:center;-webkit-animation: start 1.5s infinite ease-in-out;"><img src="images/index/web-swipe-tip.png" /></div>
+	            </div>
+	            <div class="section" id="section4">
+	            	<div class="word"><img src="images/index/img4_1.jpg" width="100%" /></div>
+					<div style="position:absolute;left:0px; bottom:10px; width:100%; text-align:center;-webkit-animation: start 1.5s infinite ease-in-out;"><img src="images/index/web-swipe-tip.png" /></div>
+	            </div>
 	            <div class="section" id="section5">
 	            	<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;">
-						<img src="images/hdgz.jpg" />
+						<img src="images/index/hdgz.jpg" />
 					</div>
 					<div class="hdgz">
-						<p><a href="#" onclick="document.getElementById('mcover').style.display='block';">活动规则</a></p>
+						<p><a href="#" onclick="document.getElementById('mcover').style.display='block';">活动说明</a></p>
 					</div>
 					<div class="firstpage_btn">
-						<a href="uploadPic.php"><img src="images/btn_09.jpg" width="251" height="42" /></a>
-					</div>
-					<div class="firstpage_content">
-						<img src="images/pic2_01.jpg" width="216" height="54" />
+						<a href="uploadPic.php"><img src="images/index/btn_06.jpg" width="251" height="42" /></a>
 					</div>
 				</div>
 	        </div>

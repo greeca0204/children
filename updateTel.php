@@ -10,7 +10,7 @@
 	$mobile = $_POST['tel']; //电话号码
 	
 	$clientId = '8013413301';	//appid,需要向流量宝申请，更换活动时需要修改
-	$taskId = '100001933';   //活动id,需要向流量宝申请，更换活动时需要修改
+	$taskId = '100002044';   //活动id,需要向流量宝申请，更换活动时需要修改
 	$key = 'uUWeehMg5or7TCkVJVIHlGGeoYOJ5jh1';   //活动key,需要向流量宝申请，更换活动时需要修改
 	$clientType = 1; //连接客户端状态，1为pc客户端，因为调用的多数是服务器，故默认为1
 	$timeStamps = time(); //当前系统时间戳

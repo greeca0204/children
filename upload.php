@@ -18,6 +18,6 @@
 	if($success){
 		$sql="insert into a_motherday(openid,nickname,img) values('$openId','$nickname','$url')";
 		mysql_query($sql);
-		echo "<script>location.href='tel.php';</script>";
+		echo "<script>location.href='tel.php?fid=".$openId."';</script>";
 	}
 ?>

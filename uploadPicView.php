@@ -1,9 +1,10 @@
 <?php
 	session_start();
 	include("lib/globalPram.php");//系统全局参数
-	$pic = $_POST['pic'];
-	$openId = $_SESSION['openId'];
-	$nickname = $_SESSION['nickname'];
+	$pic = @$_POST['pic'];
+	$openId = @$_SESSION['openId'];
+	$nickname = @$_SESSION['nickname'];
+	$_SESSION['sharestatus'] = 0;
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -24,18 +25,18 @@
 		<link rel="stylesheet" type="text/css" href="css/uploadPicView.css" />
 		<SCRIPT>document.documentElement.style.height = window.innerHeight + 'px';</SCRIPT>
 	</HEAD>
-	<BODY bgcolor="#f6f5b2">
+	<BODY style=" height:100%; background:url('images/uploadpicbg/bg.jpg') repeat-y;">
 		<div class="warp">
 			<img src="<?php echo $pic ?>" /><br />
-			<img src="images/uploadPicView.jpg" width="100%" height="auto" />
+			<img src="images/uploadpicbg/uploadPicView2.jpg" width="100%" height="auto" />
 			<form action='upload.php' method='post'>
 				<input id='pic' name='pic' type='hidden' value='<?php echo $pic; ?>' />
 				<div style="width:90%; margin:0px auto;">
-					<div style="margin-top:50px; float:left;">
-						<img src="images/btn_02.jpg" name="back" onClick="location.href='http://www.laeramus.cn/zt/children/uploadPic.php';"  width="107" height="27" />
+					<div style="margin-top:30px; float:left;">
+						<img src="images/uploadpicbg/btn_02.jpg" name="back" onClick="location.href='http://www.laeramus.cn/zt/children/uploadPic.php';"  width="107" height="33" />
 					</div>
-					<div style="margin-top:50px; float:right;">
-						<input type="image" src="images/btn_03.jpg" name="submit"  width="107" height="27" />
+					<div style="margin-top:30px; float:right;">
+						<input type="image" src="images/uploadpicbg/btn_03.jpg" name="submit"  width="107" height="33" />
 					</div>
 					<div class="cl"></div>
 				</div>

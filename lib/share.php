@@ -1,6 +1,4 @@
 <?php
-	$_SESSION['openId'] = @$_GET['openId'];
-	$_SESSION['nickname'] = @$GET['nickname'];
 	
 	/*要完成分享，服务器端要完成以下操作：*/
 	/*1、构造分享URL，将其拼接起来*/

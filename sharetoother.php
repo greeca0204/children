@@ -23,8 +23,7 @@
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<style type="text/css">
-		body{background-color: #fffbb2;}
-		.warp{background-color: #fffbb2;}
+		.warp{ height:100%; background: url('images/sharepic/bg.jpg') repeat-y;}
 		</style>
 		<SCRIPT>document.documentElement.style.height = window.innerHeight + 'px';</SCRIPT>
 		
@@ -85,20 +84,22 @@
 		</script>
 		<!-- 分享代码开始，由于涉及到PHP调用，不能拆开js-->
 	</HEAD>
-	<BODY bgcolor="#f6f5b2">	
+	<BODY>	
 		<div class="warp">
+			<div style="width:100%; text-align:center;">
 			<?php
 				if($rs=mysql_fetch_array(@$conn))
 				{
-					echo "<img src='".$rs['img']."' width='100%' height='270' />";
+					echo "<img src='".$rs['img']."' width='320' height='280' />";
 				}	
 			?>
+			</div>
 			<div style="width:100%; text-align:center;">
-				<img src="images/picshow.jpg" width="320" height="87" />
+				<img src="images/sharepic/uploadPicView.jpg" width="320" height="101" />
 			</div>
 			<div style="width:100%; text-align:center; margin-top:5px;">
 				<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce0cf9472acf4b6&redirect_uri=http%3a%2f%2fnb.189.cn%2fpublic%2fwbWeixinCallback.do&response_type=code&scope=snsapi_base&state=http%3a%2f%2fwww.laeramus.cn%2fzt%2fchildren%2findex.php&connect_redirect=1#wechat_redirect">
-					<img src="images/btn_04.jpg" width="170" height="33" />
+					<img src="images/sharepic/btn_04.jpg" width="170" height="33" />
 				</a>
 			</div>
 		</div>

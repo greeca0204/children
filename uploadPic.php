@@ -1,10 +1,9 @@
 <?php
 	session_start();
-	$_SESSION['openId'] = @$_GET['openId'];
-	$_SESSION['nickname'] = @$GET['nickname'];
 	include("lib/globalPram.php");//系统全局参数
 	include("lib/share.php");//分享接口实现
 	include("lib/shareToWechatPram.php");//分享到微信参数设置
+	
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -87,48 +86,44 @@
 		<DIV class="pages">
 			<!-- 滚动页 -->
 			<DIV class="page p1">
+			
 				<DIV class="content">			
 					<DIV class="sub-page sp3">
-						<div class="firstpage_content">
-							<img src="images/pic2_01.jpg" width="216" height="54" />
-						</div>
 						<div class="upgrate_btn">
-							<INPUT id="file" class="real-btn" type="file">
-							<BUTTON class="btn-take-photo">&nbsp;</BUTTON>
+							<div class="cent">
+								<INPUT id="file" class="real-btn" type="file" />
+								<BUTTON class="btn-take-photo">&nbsp;</BUTTON>
+							</div>
 						</div>
 					</DIV>
 				</DIV>
 			</DIV>
 			<!-- 滚动页 -->
 			<!-- 拍照页 -->
-			<DIV class="page p2" style="background:#fffbb2;">
+			<DIV class="page p2" style=" height:100%; background:url('images/uploadpicbg/bg.jpg') repeat-y;">
 				
 				<DIV class="content">
 					<DIV id="container" class="editor"></DIV>
 					<DIV class="tools">
 						<UL class="list-role">
-							<LI data-fg='{ "src": "images/template_01_top.jpg",  "pos": [0, 0], "move": false }' data-fg2='{ "src": "images/template_01_right.jpg",  "pos": [224,41], "move": false }'  data-fg3='{ "src": "images/template_01_bottom.jpg",  "pos": [0,210], "move": false }'  data-fg4='{ "src": "images/template_01_left.jpg",  "pos": [0, 41], "move": false }' >
+							<LI data-fg='{ "src": "images/uploadpicbg/template_01_top.png",  "pos": [68, 0], "move": false }' data-fg2='{ "src": "images/uploadpicbg/template_01_right.png",  "pos": [279,58], "move": false }'  data-fg3='{ "src": "images/uploadpicbg/template_01_bottom.png",  "pos": [68,212], "move": false }'  data-fg4='{ "src": "images/uploadpicbg/template_01_left.png",  "pos": [0, 0], "move": false }' data-fg5='{ "src": "images/uploadpicbg/template_01_1.png",  "pos": [100, 100], "move": true }' >
 								<div class="thumbli">
-									<DIV class="thumb"><IMG alt="" src="images/template_01.jpg" /></DIV>
-									<p>慈母</p>
+									<DIV class="thumb"><IMG alt="" src="images/uploadpicbg/template_01.jpg" /></DIV>
 								</div>
 							</LI>
-							<LI data-fg='{ "src": "images/template_02_top.jpg",  "pos": [0, 0], "move": false }' data-fg2='{ "src": "images/template_02_right.jpg",  "pos": [224,41], "move": false }'  data-fg3='{ "src": "images/template_02_bottom.jpg",  "pos": [0,210], "move": false }'  data-fg4='{ "src": "images/template_02_left.jpg",  "pos": [0, 41], "move": false }'>
+							<LI data-fg='{ "src": "images/uploadpicbg/template_02_top.png",  "pos": [37, 0], "move": false }' data-fg2='{ "src": "images/uploadpicbg/template_02_right.png",  "pos": [288,59], "move": false }'  data-fg3='{ "src": "images/uploadpicbg/template_02_bottom.png",  "pos": [37,232], "move": false }'  data-fg4='{ "src": "images/uploadpicbg/template_02_left.png",  "pos": [0, 0], "move": false }' data-fg5='{ "src": "images/uploadpicbg/template_02_1.png",  "pos": [100, 100], "move": true }'>
 								<div class="thumbli">
-									<DIV class="thumb"><IMG alt="" src="images/template_02.jpg" /></DIV>
-									<p>女超人</p>
+									<DIV class="thumb"><IMG alt="" src="images/uploadpicbg/template_02.jpg" /></DIV>
 								</div>
 							</LI>
-							<LI data-fg='{ "src": "images/template_03_top.jpg",  "pos": [0, 0], "move": false }' data-fg2='{ "src": "images/template_03_right.jpg",  "pos": [224,41], "move": false }'  data-fg3='{ "src": "images/template_03_bottom.jpg",  "pos": [0,210], "move": false }'  data-fg4='{ "src": "images/template_03_left.jpg",  "pos": [0, 41], "move": false }'>
+							<LI data-fg='{ "src": "images/uploadpicbg/template_03_top.png",  "pos": [116, 0], "move": false }' data-fg2='{ "src": "images/uploadpicbg/template_03_right.png",  "pos": [303,67], "move": false }'  data-fg3='{ "src": "images/uploadpicbg/template_03_bottom.png",  "pos": [116,210], "move": false }'  data-fg4='{ "src": "images/uploadpicbg/template_03_left.png",  "pos": [0, 0], "move": false }' data-fg5='{ "src": "images/uploadpicbg/template_03_1.png",  "pos": [100, 100], "move": true }'>
 								<div class="thumbli">
-									<DIV class="thumb"><IMG alt="" src="images/template_03.jpg" /></DIV>
-									<p>潮妈</p>
+									<DIV class="thumb"><IMG alt="" src="images/uploadpicbg/template_03.jpg" /></DIV>
 								</div>
 							</LI>
-							<LI data-fg='{ "src": "images/template_04_top.jpg",  "pos": [0, 0], "move": false }' data-fg2='{ "src": "images/template_04_right.jpg",  "pos": [224,41], "move": false }'  data-fg3='{ "src": "images/template_04_bottom.jpg",  "pos": [0,210], "move": false }'  data-fg4='{ "src": "images/template_04_left.jpg",  "pos": [0, 41], "move": false }'>
+							<LI data-fg='{ "src": "images/uploadpicbg/template_04_top.png",  "pos": [0, 0], "move": false }' data-fg2='{ "src": "images/uploadpicbg/template_04_right.png",  "pos": [302,59], "move": false }'  data-fg3='{ "src": "images/uploadpicbg/template_04_bottom.png",  "pos": [24,195], "move": false }'  data-fg4='{ "src": "images/uploadpicbg/template_04_left.png",  "pos": [0, 59], "move": false }' data-fg5='{ "src": "images/uploadpicbg/template_04_2.png",  "pos": [100, 100], "move": true }' >
 								<div class="thumbli">
-									<DIV class="thumb"><IMG alt="" src="images/template_04.jpg" /></DIV>
-									<p>虎妈</p>
+									<DIV class="thumb"><IMG alt="" src="images/uploadpicbg/template_04.jpg" /></DIV>
 								</div>
 							</LI>
 						</UL>
@@ -138,8 +133,8 @@
 				<div style="width:90%; margin:0px auto;">
 					<NAV class="sub-nav">
 						<UL>
-							<LI class="btn-back" style="text-align:left;"><input type="image" src="images/btn_02.jpg" name="back"  width="107" height="27" /></LI>
-							<LI class="btn-save" style="text-align:right;"><input type="image" src="images/btn_01.jpg" name="submit"  width="107" height="27" /></LI>
+							<LI class="btn-back" style="text-align:left;"><input type="image" src="images/uploadpicbg/btn_02.jpg" name="back"  width="107" height="33" /></LI>
+							<LI class="btn-save" style="text-align:right;"><input type="image" src="images/uploadpicbg/btn_01.jpg" name="submit"  width="107" height="33" /></LI>
 						</UL>
 					</NAV>	
 				</div>		

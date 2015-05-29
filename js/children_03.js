@@ -40,7 +40,10 @@ Zepto(function($){
 			url: 'images/icon.png',
 			rect: [300, 300, 25, 25]
 		},
-
+		iconClose: {
+			url: 'images/icon.png',
+			rect: [400, 300, 25, 25]
+		},
 		event: {		
 			beforechange: function(){
 				page.pageSlide.playTo(1);
@@ -55,18 +58,19 @@ Zepto(function($){
 
 	// 合影功能
 	var roleTrigger =   $('.tools .list-role li');
-	var mcFg,mcFg2,mcFg3,mcFg4,mcFg5,mcRole;
+	var mcFg,mcFg2,mcFg3,mcFg4,mcFg5,mcFg6,mcRole;
 	roleTrigger.each(function(i, elem){	
 
 		$(elem).on('tap', function(e){
 			roleTrigger.removeClass('current');//去掉默认模版打钩
 			$(this).addClass('current');//选择模版打钩
-			mcFg && page.eidtor.stage.removeChild(mcFg);
-			mcRole && page.eidtor.stage.removeChild(mcRole);
-			mcFg2 && page.eidtor.stage.removeChild(mcFg2);
-			mcFg3 && page.eidtor.stage.removeChild(mcFg3);
-			mcFg4 && page.eidtor.stage.removeChild(mcFg4);
-			mcFg5 && page.eidtor.stage.removeChild(mcFg5);
+			mcFg = mcFg && page.eidtor.stage.removeChild(mcFg);
+			mcRole = page.eidtor.stage.removeChild(mcRole);
+			mcFg2 = page.eidtor.stage.removeChild(mcFg2);
+			mcFg3 = page.eidtor.stage.removeChild(mcFg3);
+			mcFg4 = page.eidtor.stage.removeChild(mcFg4);
+			mcFg5 = page.eidtor.stage.removeChild(mcFg5);
+			mcFg6 = page.eidtor.stage.removeChild(mcFg6);
 							
 							//显示框图
 							/*
@@ -88,7 +92,7 @@ Zepto(function($){
 			if(fg) {
 				var fgImg = new Image();
 				fgImg.onload = function(){
-					mcFg = page.eidtor.addImage({'img': fgImg,  'pos': fg.pos, 'disScale': true, 'disMove': !fg.move});
+					mcFg = page.eidtor.addImage({'img': fgImg,  'pos': fg.pos, 'disScale': true, 'disMove': !fg.move , 'disable': true});
 				}
 				fgImg.src = fg.src;	
 			}
@@ -97,7 +101,7 @@ Zepto(function($){
 			if(fg2) {
 				var fgImg2 = new Image();
 				fgImg2.onload = function(){
-					mcFg2 = page.eidtor.addImage({'img': fgImg2,  'pos': fg2.pos, 'disScale': true, 'disMove': !fg2.move});
+					mcFg2 = page.eidtor.addImage({'img': fgImg2,  'pos': fg2.pos, 'disScale': true, 'disMove': !fg2.move , 'disable': true});
 				}
 				fgImg2.src = fg2.src;
 			}
@@ -106,7 +110,7 @@ Zepto(function($){
 			if(fg3) {
 				var fgImg3 = new Image();
 				fgImg3.onload = function(){
-					mcFg3 = page.eidtor.addImage({'img': fgImg3,  'pos': fg3.pos, 'disScale': true, 'disMove': !fg3.move});
+					mcFg3 = page.eidtor.addImage({'img': fgImg3,  'pos': fg3.pos, 'disScale': true, 'disMove': !fg3.move , 'disable': true});
 				}
 				fgImg3.src = fg3.src;
 			}
@@ -115,9 +119,27 @@ Zepto(function($){
 			if(fg4) {
 				var fgImg4 = new Image();
 				fgImg4.onload = function(){
-					mcFg4 = page.eidtor.addImage({'img': fgImg4,  'pos': fg4.pos, 'disScale': true, 'disMove': !fg4.move});
+					mcFg4 = page.eidtor.addImage({'img': fgImg4,  'pos': fg4.pos, 'disScale': true, 'disMove': !fg4.move , 'disable': true});
 				}	
 				fgImg4.src = fg4.src;
+			}
+
+			var fg5 = $(this).data('fg5');
+			if(fg5) {
+				var fgImg5 = new Image();
+				fgImg5.onload = function(){
+					mcFg5 = page.eidtor.addImage({'img': fgImg5,  'pos': fg5.pos, 'disScale': false, 'disMove': !fg5.move});
+				}	
+				fgImg5.src = fg5.src;
+			}
+
+			var fg6 = $(this).data('fg6');
+			if(fg6) {
+				var fgImg6 = new Image();
+				fgImg6.onload = function(){
+					mcFg6 = page.eidtor.addImage({'img': fgImg6,  'pos': fg6.pos, 'disScale': false, 'disMove': !fg6.move});
+				}	
+				fgImg6.src = fg6.src;
 			}
 		});
 	});

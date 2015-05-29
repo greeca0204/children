@@ -2,7 +2,21 @@
 	session_start(); 	
 	include("lib/globalPram.php");//系统全局参数
 	include("lib/share.php");//分享接口实现
-	include("lib/shareToWechatPram.php");//分享到微信参数设置
+	if(@$_GET['fid'])
+	{
+		$_SESSION['fid'] = $_GET['fid'];
+	}
+	else
+	{
+		$_SESSION['fid'] = $_GET['fid'];
+	}
+	
+		
+	$gstwc_title_proPic = "我的脸萌指数爆灯，你呢？一起PO图赢小蚁运动相机和小米自拍杆。";
+	$gstwc_desc_proPic = "我的脸萌指数爆灯，你呢？一起PO图赢小蚁运动相机和小米自拍杆。";
+	
+	$gstwc_link_proPic = "http://www.laeramus.cn/zt/children/sharetoother.php?fid=".$_SESSION['fid'];
+	$gstwc_imgUrl_proPic = "http://www.laeramus.cn/zt/children/images/sharepic/share2.jpg";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
@@ -93,16 +107,16 @@
 			<?php 
 				if(@$_SESSION['sharestatus']==0){
 			?>
-					<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: block;">
-						<img src="images/share.jpg">
+					<div id="mcover" onClick="document.getElementById('mcover').style.display='';" style="display: block;">
+						<img src="images/tel/share.jpg">
 					</div>
 			<?php
 					$_SESSION['sharestatus'] = 1;
 				}
 				else{
 			?>
-					<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;">
-						<img src="images/share.jpg">
+					<div id="mcover" onClick="document.getElementById('mcover').style.display='';" style="display: none;">
+						<img src="images/tel/share.jpg">
 					</div>
 			<?php
 				}
@@ -110,18 +124,15 @@
 		<!--分享div -->
 		
 		<div class="warp">
-			<div style="position:absolute;top:40px; left:0px; width:100%; text-align:center;">
-				<p style="font-size:18px; font-family:微软雅黑; font-weight:bold; color:#f00;">领取10M电信流量</p>
-			</div>
-			<div style="  position:absolute; width:100%; top:245px;  left:0px; text-align:center;">
-				<form action="updateTel.php" method="post" onsubmit="return validate();">
-					<div style="text-align:center;"><img src="images/tel_02.jpg" width="210px" height="auto" /></div>
-					<p style=" padding-top:5px; height:46px; background:url(images/kuang.jpg) no-repeat center 0px; -webkit-background-size: 223px 46px;background-size: 223px 46px;">
-						<input id="tel" name="tel" type="text" value="请输入手机号码" style="width:210px; height:35px; border:0px; background-color: transparent; " onfocus="clearTel();" />
+			<div style="  position:absolute; width:100%; top:45%;  left:0px; text-align:center;">
+				<form action="updateTel.php" method="post" onSubmit="return validate();">
+					<div style="text-align:center;"><img src="images/tel/tel_02.jpg" width="210px" height="auto" /></div>
+					<p style=" padding-top:5px; height:46px; background:url(images/tel/kuang.jpg) no-repeat center 0px; -webkit-background-size: 223px 46px;background-size: 223px 46px;">
+						<input id="tel" name="tel" type="text" value="请输入手机号码" style="width:210px; height:35px; border:0px; background-color: transparent; " onFocus="clearTel();" />
 					</p>
-					<div style="width:210px; margin:0px auto; text-align:left;"><img src="images/tel_03.jpg" width="70px" height="auto" /></div>
+					<div style="width:210px; margin:0px auto; text-align:left;"><img src="images/tel/tel_03.jpg" width="70px" height="auto" /></div>
 					<div style=" padding:5px 0px 5px 0px; height:32px;width:210px; margin:0px auto;">
-						<div style="width:90px; float:left; margin-right:20px; background:url(images/kuang2.jpg) no-repeat center 0px;-webkit-background-size: 90px 32px;background-size: 90px 32px;">
+						<div style="width:90px; float:left; margin-right:20px; background:url(images/tel/kuang2.jpg) no-repeat center 0px;-webkit-background-size: 90px 32px;background-size: 90px 32px;">
 							<input type="text" name="code" style="width:90px; height:32px; border:0px; background-color: transparent; " />
 						</div>
 						<div style=" width:100px; float:left;">
@@ -130,7 +141,7 @@
 						<div class="cl"></div>
 					</div>
 					<p>
-						<input type="image" src="images/btn_05.jpg" name="submit"  width="208" height="43" />
+						<input type="image" src="images/tel/btn_05.jpg" name="submit"  width="208" height="43" />
 					</p>	
 				</form>
 			</div>

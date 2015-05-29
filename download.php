@@ -2,7 +2,12 @@
 	session_start();
 	include("lib/globalPram.php");//系统全局参数
 	include("lib/share.php");//分享接口实现
-	include("lib/shareToWechatPram.php");//分享到微信参数设置
+	
+	$gstwc_title_proPic = "我的脸萌指数爆灯，你呢？一起PO图赢小蚁运动相机和小米自拍杆。";
+	$gstwc_desc_proPic = "我的脸萌指数爆灯，你呢？一起PO图赢小蚁运动相机和小米自拍杆。";
+	
+	$gstwc_link_proPic = "http://www.laeramus.cn/zt/children/sharetoother.php?fid=".$_SESSION['fid'];
+	$gstwc_imgUrl_proPic = "http://www.laeramus.cn/zt/children/images/sharepic/share2.jpg";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
@@ -32,10 +37,10 @@
 			});
 			
 			var wxDefaultData = {
-				"title":"<?php echo $gstwc_title;?>",
-				"desc" : "<?php echo $gstwc_desc;?>",
-				"link":"<?php echo $gstwc_link;?>",
-				"imgUrl":"<?php echo $gstwc_imgUrl;?>",
+				"title":"<?php echo $gstwc_title_proPic;?>",
+				"desc" : "<?php echo $gstwc_desc_proPic;?>",
+				"link":"<?php echo $gstwc_link_proPic;?>",
+				"imgUrl":"<?php echo $gstwc_imgUrl_proPic;?>",
 				"fail": function (res) {alert(JSON.stringify(res));location.reload();}
 			}
 			
@@ -77,32 +82,46 @@
 		<!-- 分享代码开始，由于涉及到PHP调用，不能拆开js-->
 	</HEAD>
 	<BODY bgcolor="#fff8b0">
-		<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;">
-			<img src="images/share1.jpg">
+		<div id="mcover" onClick="document.getElementById('mcover').style.display='';" style="display: none;">
+			<img src="images/download/share1.jpg">
 		</div>
 		
 		<div class="warp">
-			<div style="position:absolute;top:40px; left:0px; width:100%; text-align:center;">
-				<p style="font-size:18px; font-family:微软雅黑; font-weight:bold; color:#f00;">亲，恭喜您获取得10M电信流量</p>
-			</div>
-			<div style="position:absolute;bottom:50px; left:0px; width:100%; text-align:center;">
+			<div style="position:absolute;bottom:10px; left:0px; width:100%; text-align:center;">
 				<div style="width:100%; text-align:center; margin-bottom:5px;">
-					<img src="images/success_01.jpg" width="320" />
+					<img src="images/download/success_01.jpg" width="183" height="30" />
 				</div>
-				<p style="margin-bottom:10px;"><a href="http://nb.189.cn/portal/info/getLastClient.do?appId=flow&clientType=1&version=v1.1&ly=189-web"><img src="images/btn_08.jpg" width="208" height="44" /></a></p>
+				<p style="margin-bottom:10px;">
+					<a href="http://nb.189.cn/portal/info/getLastClient.do?appId=flow&clientType=1&version=v1.1&ly=189-web">
+						<img src="images/download/btn_08.jpg" width="208" height="44" />
+					</a>
+				</p>
 				<?php
 					$userAgent = $_SERVER['HTTP_USER_AGENT'];
 					if(strpos($userAgent,"iPhone") || strpos($userAgent,"iPad") || strpos($userAgent,"iPod")){
 				?>
-						<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzEzNjMxNg==&mid=214301154&idx=2&sn=0a1e150a1f94f39a0da01de9fd941374#rd"><img src="images/btn_07.jpg" width="208" height="44" /></a></p>
+						<p style="margin-bottom:10px;">
+							<a href="http://mp.weixin.qq.com/s?__biz=MzA3NzEzNjMxNg==&mid=217830177&idx=1&sn=67eaef10263ce7dbc1b80944dcc18e3c#rd">
+								<img src="images/download/btn_07.jpg" width="208" height="44" />
+							</a>
+						</p>
 				<?php	
 					}else if(strpos($userAgent,"Android")){
 				?>
-						<p><a href="weixin://profile/llb21cn"><img src="images/btn_07.jpg" width="208" height="44" /></a></p>
+						<p style="margin-bottom:10px;">
+							<a href="weixin://profile/llb21cn">
+								<img src="images/download/btn_07.jpg" width="208" height="44" />
+							</a>
+						</p>
 				<?php					    
 					}
 				?>
-				<p style="margin-top:30px;"><a href="#" onclick="document.getElementById('mcover').style.display='block';">查看流量兑换详情</a></p>
+				<p style="margin-bottom:10px;">
+					<a href="uploadPic.php">
+						<img src="images/download/btn_09.jpg" width="208" height="44" />
+					</a>
+				</p>
+				<p style="margin-top:30px;"><a href="#" onClick="document.getElementById('mcover').style.display='block';">查看流量兑换详情</a></p>
 			</div>
 		</div>
 	</BODY>
