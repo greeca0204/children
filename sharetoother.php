@@ -1,12 +1,13 @@
 <?php
 	session_start();
+	error_reporting(0); 
 	include("lib/conn.php");
 	include("lib/globalPram.php");//系统全局参数
 	include("lib/share.php");//分享接口实现
 	include("lib/shareToWechatPram.php");//分享到微信参数设置
 	
 	$fid = $_GET['fid'];
-	$sql="select * from a_motherday where openid='$fid' order by id desc limit 0,1"; //获取该openid最新一次玩这个游戏的信息
+	$sql="select * from a_motherday where openidstmp='$fid' order by id desc limit 0,1"; //获取该openid最新一次玩这个游戏的信息
 	$conn = mysql_query($sql);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">

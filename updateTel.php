@@ -3,6 +3,19 @@
 	session_start();
 	include("lib/conn.php");
 	include("lib/Random.php");
+	if($_SESSION['openId']=='ovF9pt7ny3iktTmnfl1VI1wgsYBE'||trim($_SESSION['openId'])=='')
+	{
+		echo "<script>alert('你的参与次数过于频繁，请稍后再试！');location.href='index.php';</script>";
+		exit();
+	}
+	
+	$sqlError = "select count(*) from a_motherday where openid='".$_SESSION['openId']."'";
+	$rsError = mysql_query($sqlError);
+	$arrError = mysql_fetch_array($rsError);
+	if($arrError[0] >= 5){
+		echo "<script>alert('你的参与次数过于频繁，请稍后再试！');location.href='index.php';</script>";
+	}
+	
 	
 	/*获取页面所需信息*/
 	$openId = $_SESSION['openId'];  //使用者的openid
@@ -81,7 +94,7 @@
 	/*6、如果返回结果成功，修改电话号码和兑劵状态*/
 	if($arrResult['result']==0)
 	{
-		$sqlModifyTelStatus="update a_motherday set tel='$mobile',isConvert=1 where openid='$openId'";
+		$sqlModifyTelStatus="update a_motherday set tel='$mobile',isConvert=1 where openidstmp='".$_SESSION['openidstmp']."'";
 		$rsModifyTelStatus = mysql_query($sqlModifyTelStatus);		
 		if($rsModifyTelStatus)
 		{

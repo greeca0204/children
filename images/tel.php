@@ -1,23 +1,8 @@
 <?php 
-	session_start(); 
-	error_reporting(0); 
+	session_start(); 	
 	include("lib/globalPram.php");//系统全局参数
 	include("lib/share.php");//分享接口实现
-	if(@$_GET['fid'])
-	{
-		$_SESSION['fid'] = $_GET['fid'];
-	}
-	else
-	{
-		$_SESSION['fid'] = $_SESSION['fid'];
-	}
-	
-		
-	$gstwc_title_proPic = "我的脸萌指数爆灯，你呢？一起PO图赢小蚁运动相机和小米自拍杆。";
-	$gstwc_desc_proPic = "我的脸萌指数爆灯，你呢？一起PO图赢小蚁运动相机和小米自拍杆。";
-	
-	$gstwc_link_proPic = "http://www.laeramus.cn/zt/children/sharetoother.php?fid=".$_SESSION['fid'];
-	$gstwc_imgUrl_proPic = "http://www.laeramus.cn/zt/children/images/sharepic/share2.jpg";
+	include("lib/shareToWechatPram.php");//分享到微信参数设置
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
@@ -108,7 +93,7 @@
 			<?php 
 				if(@$_SESSION['sharestatus']==0){
 			?>
-					<div id="mcover" onClick="document.getElementById('mcover').style.display='';" style="display: block;">
+					<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: block;">
 						<img src="images/tel/share.jpg">
 					</div>
 			<?php
@@ -116,7 +101,7 @@
 				}
 				else{
 			?>
-					<div id="mcover" onClick="document.getElementById('mcover').style.display='';" style="display: none;">
+					<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;">
 						<img src="images/tel/share.jpg">
 					</div>
 			<?php
@@ -125,11 +110,11 @@
 		<!--分享div -->
 		
 		<div class="warp">
-			<div style="  position:absolute; width:100%; top:45%;  left:0px; text-align:center;">
-				<form action="updateTel.php" method="post" onSubmit="return validate();">
+			<div style="  position:absolute; width:100%; top:200px;  left:0px; text-align:center;">
+				<form action="updateTel.php" method="post" onsubmit="return validate();">
 					<div style="text-align:center;"><img src="images/tel/tel_02.jpg" width="210px" height="auto" /></div>
 					<p style=" padding-top:5px; height:46px; background:url(images/tel/kuang.jpg) no-repeat center 0px; -webkit-background-size: 223px 46px;background-size: 223px 46px;">
-						<input id="tel" name="tel" type="text" value="请输入手机号码" style="width:210px; height:35px; border:0px; background-color: transparent; " onFocus="clearTel();" />
+						<input id="tel" name="tel" type="text" value="请输入手机号码" style="width:210px; height:35px; border:0px; background-color: transparent; " onfocus="clearTel();" />
 					</p>
 					<div style="width:210px; margin:0px auto; text-align:left;"><img src="images/tel/tel_03.jpg" width="70px" height="auto" /></div>
 					<div style=" padding:5px 0px 5px 0px; height:32px;width:210px; margin:0px auto;">
